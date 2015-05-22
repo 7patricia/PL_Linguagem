@@ -1,0 +1,78 @@
+%{
+	#include <stdio.h>
+	#include <string.h>
+
+	int yyerror(char *s);
+
+	extern int yylineno;
+%}
+
+%union {
+	int vali;
+	char *vals;
+}
+
+%token <vali>num 
+%token <vals>pal
+%token OPA
+%token OPR
+%token BEGINP MIDDLE ENDP SEP IF ENDIF WHILE ENDWHILE ELSE
+%token PARESQ PARDIR
+
+%%
+
+programa	:	BEGINP	declaracoes	MIDDLE	instrucoes	ENDP
+
+declaracoes	:	variavel
+			|	variavel SEP declaracoes
+			;
+
+variavel 	:	pal 
+			;
+
+instrucoes	:	instrucao SEP	
+			|	instrucao SEP instrucoes 
+			;
+
+instrucao	:	atribuicao
+			| condicao
+			| ciclo
+			;
+
+atribuicao 	:	variavel SEP expressao 
+			;
+
+expressao 	:	valor 
+			|	valor OPA expressao
+			;
+
+valor		:	num { { printf("%d\n", $1); } }
+			|	pal { { printf("%s\n", $1); } }
+			;
+
+comp		:	PARESQ valor OPR valor PARDIR
+			;
+
+condicao	: 	IF comp instrucoes  ENDIF 
+			| IF comp instrucoes ELSE instrucoes ENDIF
+	
+			;
+
+ciclo 		:	WHILE comp instrucoes ENDWHILE
+			;
+
+
+%%
+int yyerror(char *s) {
+	fprintf(stderr, "%d! %s\n", yylineno, s);
+	return 0;
+}
+
+int main(int argc, char* argv[]){
+	yyparse();
+	return 0;
+}
+
+
+
+	

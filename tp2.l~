@@ -5,17 +5,20 @@
 
 num 		[0-9]+
 pal 		[a-zA-Z]+
-opA 		"+"|"-"|"&&"     
-opM			"||"|"*"|"/"
-opR			">>"|"<<"|">="|"<="|"=="|"|=|"
+opA 		"+"|"-"|"*"|"/"
+opL		"&&"|"||"
+opR		">>"|"<<"|">="|"<="|"=="|"|=|"
 inicio 		"INICIO"
 corpo 		"CORPO"
-fim			"FIM" 
+fim		"FIM" 
+sep 		","|";"|"="
 condicao 	"IF"
 ifelse		"ELSE" 
 fimCond		"ENDIF"
 ciclo		"WHILE"
 fimciclo	"ENDWHILE"
+paresq		"("
+pardir		")"
 
 %%
 {inicio}			{ return BEGINP; }
@@ -23,7 +26,6 @@ fimciclo	"ENDWHILE"
 {fim}				{ return ENDP; }
 {sep}				{ return SEP; }
 {condicao}			{ return IF; }
-{ifelse}			{ return ELSE; }
 {fimCond}			{ return ENDIF; }
 {ciclo}				{ return WHILE; }
 {fimciclo}			{ return ENDWHILE; }
@@ -31,9 +33,9 @@ fimciclo	"ENDWHILE"
 {pal}     			{ yylval.vals = strdup(yytext); return pal; }
 {opA}				{ return (OPA); }
 {opR}				{ return (OPR); }
+{paresq}			{ return (PARESQ); }
+{pardir}			{ return (PARDIR); }
 .|\n      			{ ; }
-
-
 
 %%
 

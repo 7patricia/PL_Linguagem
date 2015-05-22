@@ -1,0 +1,6 @@
+INICIO
+	x,y,z
+CORPO
+	x=1;
+	y=1+2+2;
+FIM

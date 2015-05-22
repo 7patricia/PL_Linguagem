@@ -1,8 +1,11 @@
 %{
 	#include <stdio.h>
 	#include <string.h>
+	//#include "tp2.h"
 
 	int yyerror(char *s);
+
+	//ListaL vars = NULL;
 
 	extern int yylineno;
 %}
@@ -15,35 +18,71 @@
 %token <vali>num 
 %token <vals>pal
 %token OPA
-%token BEGINP MIDDLE ENDP SEP 
+%token OPR
+%token OPM
+%token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE IMPRIMIR LER
+
+%type<vali> valor expressao
 
 %%
 
-programa	:	BEGINP	declaracoes	MIDDLE	instrucoes	ENDP
+programa	:	BEGINP	declaracoes	MIDDLE	instrucoes	ENDP	
 
-declaracoes	:	variavel
-			|	variavel SEP declaracoes
+variaveis	:	variavel							{	 }
+			|	variaveis ',' variavel	
 			;
 
 variavel 	:	pal 
 			;
 
-instrucoes	:	instrucao SEP	
-			|	instrucao SEP instrucoes 
+instrucoes	:	instrucao ';'	
+			|	instrucoes ';' instrucao
 			;
 
 instrucao	:	atribuicao
+			| 	condicao
+			| 	ciclo
+			|	LER '(' var ')' ';'
+			|	IMPRIMIR '('txt')' ';'
 			;
 
-atribuicao 	:	variavel SEP expressao 
+txt			: pal
+			| expressao
 			;
 
-expressao 	:	valor 
-			|	valor OPA expressao
+
+atribuicao 	:	var '=' expressao ';'				{ ; }
 			;
 
-valor		:	num { { printf("%d\n", $1); } }
-			|	pal { { printf("%s\n", $1); } }
+var 		: 	variavel 
+			| 	variavel '('expressao')'
+			;
+
+cond		:	expressao
+			| 	expressao OPR expressao
+			;
+
+expressao	: 	termo
+			| 	expressao OPA termo
+			;
+
+termo		: 	fator
+			| 	termo OPM fator
+			;
+
+fator		: 	var
+			| 	num
+			|	'(' cond ')'
+			;
+
+condicao	: 	IF comp instrucoes  ENDIF 
+			| 	IF comp instrucoes  ELSE instrucoes '!''!'	
+			;
+
+ciclo 		:	WHILE comp instrucoes ENDWHILE
+			;
+
+comp		:	'(' fator OPR fator ')'
 			;
 
 
@@ -54,8 +93,11 @@ int yyerror(char *s) {
 }
 
 int main(int argc, char* argv[]){
+	//vars= criaLista();
 	yyparse();
 	return 0;
+
+
 }
 
 
