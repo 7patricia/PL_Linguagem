@@ -12,23 +12,30 @@
 
 %union {
 	int vali;
-	char *vals;
+	char * vals;
 }
 
 %token <vali>num 
 %token <vals>pal
-%token OPA
-%token OPR
-%token OPM
-%token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE IMPRIMIR LER
+%token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE ARRAY INT WRITE READ OPM OPR OPA
 
-%type<vali> valor expressao
 
 %%
 
 programa	:	BEGINP	declaracoes	MIDDLE	instrucoes	ENDP	
 
-variaveis	:	variavel							{	 }
+declaracoes	: declaracao
+			| declaracoes ';' declaracao
+			;
+
+declaracao	: tipo variaveis
+			;	
+
+tipo		: INT
+			| ARRAY '(' num ')'
+			;
+
+variaveis	:	variavel							
 			|	variaveis ',' variavel	
 			;
 
@@ -42,16 +49,16 @@ instrucoes	:	instrucao ';'
 instrucao	:	atribuicao
 			| 	condicao
 			| 	ciclo
-			|	LER '(' var ')' ';'
-			|	IMPRIMIR '('txt')' ';'
+			|	READ '(' var ')' ';'
+			|	WRITE '('txt')' ';'
 			;
 
-txt			: pal
-			| expressao
+txt			: expressao
+			| pal
 			;
 
 
-atribuicao 	:	var '=' expressao ';'				{ ; }
+atribuicao 	:	var '=' expressao ';'				
 			;
 
 var 		: 	variavel 
@@ -75,15 +82,14 @@ fator		: 	var
 			|	'(' cond ')'
 			;
 
-condicao	: 	IF comp instrucoes  ENDIF 
-			| 	IF comp instrucoes  ELSE instrucoes '!''!'	
+condicao	: 	IF '('cond')' instrucoes  ENDIF 
+			| 	IF '('cond')' instrucoes  ELSE instrucoes ENDIF	
 			;
 
-ciclo 		:	WHILE comp instrucoes ENDWHILE
+ciclo 		:	WHILE '('cond')' instrucoes ENDWHILE
 			;
 
-comp		:	'(' fator OPR fator ')'
-			;
+
 
 
 %%

@@ -1,6 +1,6 @@
-INICIO
-	x,y,z
-CORPO
+BEGIN
+	INT x,y,z;
+BODY
 	x=1;
 	y=1+2+2;
-FIM
+END

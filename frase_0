@@ -1,11 +1,11 @@
-INICIO
-	integer x,y,z;
-	intarray(100) vect1 , vect2
-CORPO
+BEGIN
+	INT x,y,z;
+	ARRAY(100) vect1 , vect2;
+BODY
 	x=1;
 	y=1+2;
 	IF (x>>5) y=y+1; ENDIF;
 	x=2;
 	WHILE (y<<2) y=y+1; IF (x>>5) y=y+1; ENDIF; ENDWHILE;
 	IF (x==1) y=y+1; y=2; ELSE y=3; ENDIF;
-FIM
+END

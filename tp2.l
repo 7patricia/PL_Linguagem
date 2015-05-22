@@ -5,32 +5,41 @@
 
 num 		[0-9]+
 pal 		[a-zA-Z]+
+espacos 	[ \t]
 opA 		"+"|"-"|"&&"     
 opM			"||"|"*"|"/"
 opR			">>"|"<<"|">="|"<="|"=="|"|=|"
-inicio 		"INICIO"
-corpo 		"CORPO"
-fim			"FIM" 
+inicio 		"BEGIN"
+corpo 		"BODY"
+fim			"END" 
 condicao 	"IF"
 ifelse		"ELSE" 
 fimCond		"ENDIF"
 ciclo		"WHILE"
 fimciclo	"ENDWHILE"
+inteiro		"INT"
+vetor		"ARRAY"
+read		"READ"
+write		"WRITE"
 
 %%
 {inicio}			{ return BEGINP; }
 {corpo}				{ return MIDDLE; }
 {fim}				{ return ENDP; }
-{sep}				{ return SEP; }
 {condicao}			{ return IF; }
 {ifelse}			{ return ELSE; }
 {fimCond}			{ return ENDIF; }
 {ciclo}				{ return WHILE; }
 {fimciclo}			{ return ENDWHILE; }
-{num}     			{ yylval.vali = atoi(yytext); return num; }
-{pal}     			{ yylval.vals = strdup(yytext); return pal; }
 {opA}				{ return (OPA); }
 {opR}				{ return (OPR); }
+{vetor}				{ return (ARRAY);}
+{inteiro}			{ return (INT);}
+{read}				{ return (READ);}
+{write}				{ return (WRITE);}
+{num}     			{ yylval.vali = atoi(yytext); return num; }
+{pal}     			{ yylval.vals = strdup(yytext); return pal; }
+
 .|\n      			{ ; }
 
 
