@@ -24,7 +24,7 @@
 
 programa	:	BEGINP	declaracoes	MIDDLE	instrucoes	ENDP	
 
-declaracoes	: declaracao
+declaracoes	: declaracao 
 			| declaracoes ';' declaracao
 			;
 
@@ -35,7 +35,7 @@ tipo		: INT
 			| ARRAY '(' num ')'
 			;
 
-variaveis	:	variavel							
+variaveis	:	variavel 						
 			|	variaveis ',' variavel	
 			;
 
@@ -65,9 +65,6 @@ var 		: 	variavel
 			| 	variavel '('expressao')'
 			;
 
-cond		:	expressao
-			| 	expressao OPR expressao
-			;
 
 expressao	: 	termo
 			| 	expressao OPA termo
@@ -90,6 +87,9 @@ ciclo 		:	WHILE '('cond')' instrucoes ENDWHILE
 			;
 
 
+cond		:	expressao
+			| 	expressao OPR expressao
+			;
 
 
 %%
