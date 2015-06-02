@@ -23,7 +23,7 @@ read		"READ"
 write		"WRITE"
 
 %%
-[,;(){}=]              { return yytext[0]; }
+[,;()=]              { return yytext[0]; }
 {inicio}			{ return BEGINP; }
 {corpo}				{ return MIDDLE; }
 {fim}				{ return ENDP; }
