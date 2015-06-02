@@ -528,7 +528,7 @@ case 8:
 break;
 case 11:
 #line 48 "tp2.y"
-	{varAtual=yystack.l_mark[0].vals;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);
+	{varAtual=yystack.l_mark[0].vals;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);proxReg++;
 											if(aux==-1)printf("Erro: A variável %s já foi declarada!\n",varAtual);}
 break;
 case 20:

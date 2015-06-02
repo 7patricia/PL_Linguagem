@@ -45,7 +45,7 @@ variaveis	:	variavel
 			|	variaveis ',' variavel	
 			;
 
-variavel 	:	pal 						{varAtual=$1;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);
+variavel 	:	pal 						{varAtual=$1;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);proxReg++;
 											if(aux==-1)printf("Erro: A variável %s já foi declarada!\n",varAtual);}	
 			;
 
