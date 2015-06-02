@@ -3,4 +3,7 @@ BEGIN
 BODY
 	x=1;
 	y=1+2+2;
+	READ(z); 
+	z=(x+y)*3;
+	WRITE(z);
 END

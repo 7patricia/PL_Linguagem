@@ -1,12 +1,17 @@
 %{
 	#include <stdio.h>
 	#include <string.h>
-	//#include "tp2.h"
+	#include "arvore.c"
+
+	Tree arvore;
+
+	int aux;
+	int proxReg=0; 
+	char* varAtual;
+	char* tipo;
+	int tamanho=1;
 
 	int yyerror(char *s);
-
-	//ListaL vars = NULL;
-
 	extern int yylineno;
 %}
 
@@ -16,53 +21,50 @@
 }
 
 %token <vali>num 
-%token <vals>pal
-%token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE ARRAY INT WRITE READ OPM OPR OPA
+%token <vals>pal,INT, ARRAY, OPM, OPA, OPR
+%token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE WRITE READ
 
 
 %%
 
-programa	:	BEGINP	declaracoes	MIDDLE	instrucoes	ENDP	
+programa	:	BEGINP	{arvore=initBinTree();} declaracoes	MIDDLE	instrucoes	ENDP	
 
 declaracoes	: declaracao 
-			| declaracoes ';' declaracao
+			| declaracoes  declaracao 
 			;
 
-declaracao	: tipo variaveis
+declaracao	: tipo variaveis ';'					
+			| tipo '(' num ')' variaveis ';'	{tamanho=$3;printf("tamanho: %i\n",tamanho);}
 			;	
 
-tipo		: INT
-			| ARRAY '(' num ')'
+tipo		: INT 							{tipo=$1;printf("tipo: %s\n",tipo);}
+			| ARRAY							{tipo=$1;printf("tipo: %s\n",tipo);}
 			;
 
-variaveis	:	variavel 						
+variaveis	:	variavel 					
 			|	variaveis ',' variavel	
 			;
 
-variavel 	:	pal 
+variavel 	:	pal 						{varAtual=$1;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);
+											if(aux==-1)printf("Erro: A variável %s já foi declarada!\n",varAtual);}	
 			;
 
-instrucoes	:	instrucao ';'	
-			|	instrucoes ';' instrucao
+instrucoes	:	instrucao ';'		
+			|	instrucoes  instrucao ';'
 			;
 
 instrucao	:	atribuicao
 			| 	condicao
 			| 	ciclo
-			|	READ '(' var ')' ';'
-			|	WRITE '('txt')' ';'
+			|	READ '(' var ')' 
+			|	WRITE '('expressao')' 
 			;
 
-txt			: expressao
-			| pal
+atribuicao 	:	var '=' expressao 				
 			;
 
-
-atribuicao 	:	var '=' expressao ';'				
-			;
-
-var 		: 	variavel 
-			| 	variavel '('expressao')'
+var 		: 	pal 					{aux=existsBinTree(arvore,$1); if(aux==0)printf("Erro: A variável %s não está declarada!\n",$1);}
+			| 	pal '('expressao')'
 			;
 
 
@@ -74,7 +76,7 @@ termo		: 	fator
 			| 	termo OPM fator
 			;
 
-fator		: 	var
+fator		: 	var 						
 			| 	num
 			|	'(' cond ')'
 			;
@@ -99,7 +101,10 @@ int yyerror(char *s) {
 }
 
 int main(int argc, char* argv[]){
-	//vars= criaLista();
+	
+	
+	
+	
 	yyparse();
 	return 0;
 

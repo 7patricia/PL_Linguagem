@@ -9,8 +9,8 @@ lex.yy.o: lex.yy.c
 lex.yy.c: y.tab.h tp2.l
 	flex tp2.l
 
-y.tab.o: y.tab.c y.tab.h
-	gcc -c y.tab.c
+y.tab.o: y.tab.c y.tab.h 
+	gcc -c y.tab.c arvore.c
 
 y.tab.c y.tab.h : tp2.y
 	yacc -d tp2.y

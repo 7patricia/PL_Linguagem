@@ -1,20 +1,20 @@
 #define num 257
 #define pal 258
-#define BEGINP 259
-#define MIDDLE 260
-#define ENDP 261
-#define IF 262
-#define ENDIF 263
-#define WHILE 264
-#define ENDWHILE 265
-#define ELSE 266
-#define ARRAY 267
-#define INT 268
-#define WRITE 269
-#define READ 270
-#define OPM 271
-#define OPR 272
-#define OPA 273
+#define INT 259
+#define ARRAY 260
+#define OPM 261
+#define OPA 262
+#define OPR 263
+#define BEGINP 264
+#define MIDDLE 265
+#define ENDP 266
+#define IF 267
+#define ENDIF 268
+#define WHILE 269
+#define ENDWHILE 270
+#define ELSE 271
+#define WRITE 272
+#define READ 273
 #ifdef YYSTYPE
 #undef  YYSTYPE_IS_DECLARED
 #define YYSTYPE_IS_DECLARED 1
