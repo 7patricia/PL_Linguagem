@@ -1,0 +1,329 @@
+%
+% Layout retirado de http://www.di.uminho.pt/~prh/curplc09.html#notas
+%
+\documentclass{report}
+\usepackage[portuges]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+
+\usepackage{url}
+%\usepackage{alltt}
+%\usepackage{fancyvrb}
+\usepackage{listings}
+%LISTING - GENERAL
+\lstset{
+	basicstyle=\small,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	breaklines=true,
+    frame=tB,
+	mathescape=true,
+	escapeinside={(*@}{@*)}
+}
+%
+%\lstset{ %
+%	language=C,								% choose the language of the code
+%	basicstyle=\ttfamily\footnotesize,		% the size of the fonts that are used for the code
+%	keywordstyle=\bfseries,					% set the keyword style
+%	%numbers=left,							% where to put the line-numbers
+%	numberstyle=\scriptsize,				% the size of the fonts that are used for the line-numbers
+%	stepnumber=2,							% the step between two line-numbers. If it's 1 each line
+%											% will be numbered
+%	numbersep=5pt,							% how far the line-numbers are from the code
+%	backgroundcolor=\color{white},			% choose the background color. You must add \usepackage{color}
+%	showspaces=false,						% show spaces adding particular underscores
+%	showstringspaces=false,					% underline spaces within strings
+%	showtabs=false,							% show tabs within strings adding particular underscores
+%	frame=none,								% adds a frame around the code
+%	%abovecaptionskip=-.8em,
+%	%belowcaptionskip=.7em,
+%	tabsize=2,								% sets default tabsize to 2 spaces
+%	captionpos=b,							% sets the caption-position to bottom
+%	breaklines=true,						% sets automatic line breaking
+%	breakatwhitespace=false,				% sets if automatic breaks should only happen at whitespace
+%	title=\lstname,							% show the filename of files included with \lstinputlisting;
+%											% also try caption instead of title
+%	escapeinside={\%*}{*)},					% if you want to add a comment within your code
+%	morekeywords={*,...}					% if you want to add more keywords to the set
+%}
+
+\usepackage{xspace}
+
+\parindent=0pt
+\parskip=2pt
+
+\def\darius{\textsf{Darius}\xspace}
+\def\java{\texttt{Java}\xspace}
+
+\title{Processamento de Linguagens\\ (3º ano de Licenciatura em Engenharia Informática)\\ \textbf{Trabalho Prático 1}\\ Relatório de Desenvolvimento}
+\author{André Geralades (67673) \and Patrícia Barros (67665) \and Sandra Ferreira (67709)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este relatório descreve todo o processo de desenvolvimento e decisões tomadas para a realização do segundo trabalho prático da Unidade Curricular de Processamento de Linguagens.\\ O problema a resolver consiste na criação de uma linguagem imperativa simples e da respetiva \textbf{GIC} seguida do desenvolvimento de um compilador para a mesma que gera pseudo-código \textit{Assembly}.
+
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introdução} \label{intro}
+
+
+A resolução deste trabalho prático passa pelo desenvolvimento de um Filtro de Texto em Flex para gerar ficheiros em HTML. Para isso utilizamos as técnicas leccionadas nas aulas da Unidade Curricular de Processamento de Linguagens. Pretendemos portanto com este trabalho aprimorar as nossas capacidades de escrever \emph{Expressões Regulares (ER)} e também a nossa experiência na utilização da linguagem de programação C.\\ Neste relatório apresentamos todos os passos e decisões tomadas durante todo o processo, descrevemos as estruturas criadas para guardar o texto extraído pelo filtro e também uma apresentação do produto final (em HTML) obtido com a utilização do filtro criado por nós.
+
+
+\section*{Estrutura do Relatório} \label{estrutura}
+A elaboração deste documento teve por base a estrutura do relatório fornecida pelo docente. \\
+O relatório encontra-se então estruturado da seguinte forma: possuí um primeiro capítulo que faz uma contextualização ao assunto tratado neste trabalho, seguindo-se uma introdução onde são apresentadas as metas de aprendizagem pertendidas.\\
+Posteriormente é exposto o tema escolhido para desenvolver o trabalho e as tarefas que nele estão envolvidas.\\
+Imediatamente após, são exibidas as expressões regulares definidas para extrair do ficheiro XML as informações para a construção da página HTML, mostrando também os estados da aplicação e os módulos desta.\\
+Não menos importante, seguem-se os capitulos de apresentação das estruturas de dados usadas no desenvolvimento do trabalho e dos testes realizados à aplicação com os devidos resultados.
+Por último, faz-se uma análise crítica relativa quer ao desenvolvimento do projeto quer ao seu estado final e ainda é feita uma abordagem ao trabalho futuro.
+
+\chapter{Análise e Especificação} \label{ae}
+\section{Enunciado}
+Pretende-se que comece por definir uma linguagem de programação interativa simples (\textbf{LPIS}), a seu gosto.\\
+Apenas deve ter em consideração que a \textbf{LPIS} terá de permitir manusear variáveis do tipo inteiro (escalar ou \textit{array}) e realizar as operações básicas como atribuições de expressões a variáveis, ler do \textit{standard input} e escrever no \textit{standard output}. As instruções vulgares para controlo de fluxo de execução - \textit{condicional} e \textit{cíclica}- devem estar também previstas.\\
+Sobre inteiros, estão disponíveis as habituais operações aritméticas, relacionais e lógicas, bem como operação de indexação sobre \textit{arrays}.\\
+Como é da praxe neste tipo de linguagens, as nossas variáveis deverão ser declaradas no inicio do programa e não pode haver re-declarações, nem utilizações sem declaração prévia; se nada for explicitado, o valor da variável após a declaração é indefinido.\\
+Desenvolva, então, um compilador para a \textbf{LPIS}, com base na \textbf{GIC} criada acima e recurso ao Gerador \textbf{Yacc/Flex} ou \textbf{AnTLR}.\\
+O compilador da \textbf{LPIS} deve gerar \textbf{pseudo-código}, Assembly da Máquina Virtual VM cuja documentação completa será disponibilizada no Bb.
+
+\section{Descrição do Problema}
+Como descrito na secção anterior o desafio que nos foi proposto consiste na criação de uma linguagem imperativa simples apenas com as características mais básicas, o desenvolvimento de uma \textbf{GIC} para a mesma e ainda a criação de um compilador gerador de \textbf{pseudo-código} Assembly. \\
+Posto isto tivemos então de, primeiramente, pensar e desenhar uma linguagem imperativa ao nosso gosto, seguindo os requisitos pedidos. De seguida foi necessário criarmos uma gramática que a descrevesse e, finalmente, com recurso a essa gramática, tornar possível o armazenamento dos dados vindos de um programa escrito na nossa linguagem necessários à geração do \textbf{pseudo-código} Assembly.
+
+\chapter{Concepção/desenho da Resolução}\label{concepcao}
+Nos próximos capítulos iremos descrever todas as decisões tomadas no decorrer deste trabalho.
+
+\section{Desenho da Linguagem}
+O principal princípio que seguimos aquando de decidir as caraterísticas da nossa linguagem foi a simplicidade desta, desenhando-a de forma a que os passos seguintes do trabalho não fossem excessivamente complicados. Posto isto, decidimos que a nossa linguagem suportaria apenas os requisitos definidos no enunciado.\\
+Concluímos que nos seria útil que qualquer programa da nossa linguagem estivesse dividido em duas partes: as declarações de variáveis e o corpo, constituído por instruções. Percebemos também que seria mais fácil se tanto a operação condicional como o ciclo tivessem sempre marcadores do seu início e fim, e escolhemos neste caso usar como marcadores palavras reservadas para os delimitarem.\\
+ Assim, um programa tem \textbf{obrigatoriamente} de iniciar com a palavra reservada \textbf{BEGIN} e fazer-se seguir de uma ou muitas declarações de variáveis (nunca poderá haver um programa sem nenhuma declaração pois consideramos que um programa sem variáveis não faz sentido), declarações estas que são constituídas por um tipo e uma ou mais variáveis (palavras) separadas por vírgulas. No caso de ser um \textit{array} terá também de ser declarado o seu tamanho (um número entre parenteses colocado logo a seguir ao tipo). Cada declaração termina obrigatoriamente com um \textbf{;}. Os tipos das variáveis são palavras reservadas, podendo ser \textbf{INT} ou \textbf{ARRAY}.\\
+Após terminadas as declarações damos então início ao corpo do programa, através da palavra reservada \textbf{BODY}.\\
+O corpo do programa é constituído por uma ou mais instruções (mais uma vez, também o corpo não pode ser vazio pois achamos que isso não faria sentido). Cada instrução pode ser de um de cinco tipos diferentes: atribuição, condição, ciclo, escrita ou leitura e termina sempre com um ponto e vírgula.\\
+Uma atribuição consiste numa variável seguida de um sinal de igual que precede uma expressão. Neste caso uma variável pode ser uma palavra ou uma palavra seguida de uma expressão entre parênteses (para a operação de indexação de um \textit{array}). Por sua vez uma expressão é um termo ou uma expressão seguida de um operador de adição que precede um termo, sendo que um termo é um fator ou um termo seguido de um operador multiplicativo que precede um fator. Um fator pode ser uma palavra, um número ou uma condição entre parênteses, sendo que uma condição neste caso é uma expressão ou duas expressões separadas por um operador relacional.\\
+Uma condição é sempre iniciada pela palavra reservada \textbf{IF} que precede uma ou várias instruções e pode ou não ser seguida da palavra reservada \textbf{ELSE} seguida de mais instruções. Uma condição termina sempre com a palavra reservada \textbf{ENDIF}.\\
+Um ciclo é sempre iniciado pela palavra reservada \textbf{WHILE} seguida de uma condição entre parênteses que precede uma ou mais instruções e termina sempre com a palavra reservada \textbf{ENDWHILE}.
+As instruções de leitura escrita são representadas por duas palavras reservadas: \textbf{READ} e \textbf{WRITE} respetivamente. No caso da leitura a palavra reservada segue-se de uma variável (inteira ou a posição de um \textit{array}) entre parênteses, e no caso da escrita segue-se de uma expressão entre parênteses.\\
+Os símbolos que utilizamos para os operadores aditivos, multiplicativos e relacionais são os seguintes:
+\begin{verbatim}
+opA 		"+"|"-"|"||"     
+opM			"&&"|"*"|"/"
+opR			">>"|"<<"|">="|"<="|"=="|"|=|"
+\end{verbatim}
+Para melhor compreensão da descrição acima segue-se um exemplo de um programa simples escrito na nossa linguagem.
+\begin{verbatim}
+BEGIN
+INT x,y,y;
+ARRAY(100) vect , vects;
+BODY
+x=1;
+y=1+2;
+IF (x>>5) y=y+1; ENDIF;
+x=2;
+WHILE (y<<2) y=y+1; IF (x>>5) w=y+1; ENDIF; ENDWHILE;
+IF (x==1) y=y+1; y=2; ELSE y=3; ENDIF;
+END
+\end{verbatim}
+
+\section{Desenho da Gramática}
+Após desenhada e descrita a linguagem imperativa que iremos usar, resta transformar todas as regras que definimos sobre ela numa \textbf{GIC}.\\
+Os símbolos não-terminais da gramática que definimos são os seguintes: programa, desclaracoes, declaracao, tipo, variaveis, variavel instrucoes, instrucao, atribuicao, var, expressao, termo, fator, condicao, ciclo e cond.\\
+Por sua vez os símbolo terminais são: num, pal, IF, ENDIF, WHILE, ENDWHILE, BEGINP, MIDDLE, ENDP, INT, ARRAY, OPM, OPR, OPA, ";", ",", "(",")" e "=". \\
+Na concepção da nossa gramática utilizamos em todos os casos recursividade à esquerda.
+Segue-se então a gramática gerada:
+\begin{verbatim}
+programa	:	BEGINP		
+
+declaracoes	: declaracao 
+| declaracoes  declaracao 
+;
+
+declaracao	: tipo variaveis ';'					
+| tipo '(' num ')' variaveis ';'	
+;	
+
+tipo		: INT 							
+| ARRAY							
+;
+
+variaveis	:	variavel 					
+|	variaveis ',' variavel	
+;
+
+variavel 	:	pal 					 							
+;
+
+instrucoes	:	instrucao ';'		
+|	instrucoes  instrucao ';'
+;
+
+instrucao	:	atribuicao
+| 	condicao
+| 	ciclo
+|	READ '(' var ')' 
+|	WRITE '('expressao')' 
+;
+
+atribuicao 	:	var '=' expressao 				
+;
+
+var 		: 	pal 					
+| 	pal '('expressao')'
+;
+
+expressao	: 	termo
+| 	expressao OPA termo
+;
+
+termo		: 	fator
+| 	termo OPM fator
+;
+
+fator		: 	var 						
+| 	num
+|	'(' cond ')'
+;
+
+condicao	: 	IF '('cond')' instrucoes  ENDIF 
+| 	IF '('cond')' instrucoes  ELSE instrucoes ENDIF	
+;
+
+ciclo 		:	WHILE '('cond')' instrucoes ENDWHILE
+;
+
+cond		:	expressao
+| 	expressao OPR expressao
+;
+\end{verbatim}
+\iffalse
+\section{Estados da Aplicação}
+\textbf{Estado QUEM}\\
+Quando é encontarada a palavra "QUEM" são guardadas as palavras seguintes, com o devido tratamento dado pela função trim definida, uma vez que estas serão referentes a quem pertence a foto.
+\begin{verbatim}
+"<"(?i:QUEM)">" 					{ BEGIN QUEM1; }
+<QUEM1>"<"	 						{ BEGIN INITIAL; } 
+<QUEM1>[^<]+						{ quem = strdup(yytext); quem = trim(quem); }
+\end{verbatim}
+
+\textbf{Estado FACTO}\\
+Quando é identificada a expressão "FACTO" é guardada a informação que a esta se segue, através da função\textit{ strdup}.
+\begin{verbatim}
+"<"(?i:FACTO)">"					{ BEGIN FACTO1; }
+<FACTO1>"<"	 						{ BEGIN INITIAL; } 
+<FACTO1>[^<]+	 					{ facto = strdup(yytext); }
+\end{verbatim}
+
+\textbf{Estado QUANDO}\\
+Aquando da análise léxica, se for detetada a palavra "QUANDO" a data a esta referente é guardada. Posteriormente é chamada a função breakFoto que recebe como parâmetro a string guardada e converte-a num tipo de dados \textit{struct data}. 
+\begin{verbatim}
+"<"(?i:QUANDO)" "(?i:DATA)"=\""		{ BEGIN QUANDO1; }
+<QUANDO1>"\""						{ BEGIN INITIAL; } 
+<QUANDO1>[^\"]+ 					{ quando = strdup(yytext); 
+da = breakFoto(quando); }
+\end{verbatim}
+
+\textbf{Estado FOTO} \\
+Encontrada a palavra "FOTO" é criado um novo nodo na lista ligada que contêm a informação referentes a outras fotos. Depois de inserido o novo nodo, a lista é ordenada pela data das fotos.
+\begin{verbatim}
+"<"(?i:FOTO)" "(?i:FICHEIRO)"=\""	{ BEGIN FOTO1; }
+<FOTO1>"\""	 						{ BEGIN INITIAL; } 
+<FOTO1>[^\"]+						{ foto = strdup(yytext); 
+nodo = novoNodo(da, foto, quem, facto);
+sortedInsert(&dados, nodo);
+}
+\end{verbatim}
+
+\section{Módulos da Aplicação}
+\textbf{makefile} Ficheiro com a configuração de compilação.\\
+\textbf{parser.l} Ficheiro com código necessário para fazer o processamento dos ficheiros XML que contêm a informação. \\
+\textbf{listaligada.h} Ficheiro que contém o código necessário à implementação de uma lista ligada e das funções necessárias para a sua manipulação. \\
+\textbf{dados.h} Ficheiro onde se encontra a estrutura definida para guardar a data das fotos. \\
+\textbf{html.h} Ficheiro com o código que gera as páginas em HTML.
+
+\section{Estruturas de Dados}
+Dado ser necessário guradar alguns dados, a estutura de dados escolhida foi a lista ligada. Esta estrutura possui um campo para guardar a data da fotografia, o facto, breve descrição da foto, o nome do ficheiro da foto e por último, um campo quem, que se destina a guardar os nomes das pessoas retratadas.
+
+\begin{lstlisting}[language=C]
+struct data {
+	int ano;
+	int mes;
+	int dia:
+};
+
+struct listaLigada {
+	struct data datay;
+	char *nome;
+	char *quem;
+	char *fato;
+	struct listaLigada * next;
+};
+\end{lstlisting}
+
+
+\chapter{Codificação e Testes}
+
+\section{Alternativas, Decisões e Problemas de Implementação}
+No decorrer do desenvolvimento do projeto verificamos que nem todas as fotos eram possuidoras do campo "FACTO", campo este que deveria ser o cabeçalho das fotos. Embora tenha sido pedido no enunciado que utilizassemos este como cabeçalho o grupo decidiu que seria melhor se ao invés se colocasse o campo "QUEM" como cabeçalho.
+ 
+\section{Testes realizados e Resultados}
+São apresentadas de seguida, imagens que mostram o resultado do filtro de texto elaborado pelo grupo para alguns dos ficheiros XML.
+
+\begin{figure}[h]
+	\includegraphics[width=10cm]{imagens/testeAntonioMachado.png}
+	\centering
+	\caption{Resultado do filtro de testo para o caso do António Machado}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[width=10cm]{imagens/teste2MariaCeleste.png}
+	\centering
+	\caption{Resultado do filtro de testo para o caso do José de Oliveira Dias}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[width=10cm]{imagens/testeMariaCeleste.png}
+	\centering
+	\caption{Resultado do filtro de testo para o caso da Maria Celeste}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[width=10cm]{imagens/testeTabernadoFausto.png}
+	\centering
+	\caption{Resultado do filtro de testo para o caso Taberna do Fausto}
+\end{figure}
+
+%\VerbatimInput{teste1.txt}
+
+
+\chapter{Conclusão} \label{concl}
+A realização deste projeto foi fundamental para se consolidar a matéria leccionada quer nas aulas práticas quer nas aula teóricas, uma vez que as técnicas de utilização de expressões regulares aí aprendidas facilitou a implementação do problema. Estas técnicas pertimitiram recolher de forma eficiente e clara as informações pertendidas.\\
+Foi ainda possível ao grupo aprender a trabalhar com o básico da linguagem HTML que nunca tinha sido utilizada por qualquer dos elementos.
+O projeto  "Museu da Pessoa - tratamento de fotografias" foi muito enriquecedor, dado que obrigou a dedicar um porção de tempo e a refinar as qualidades do grupo na utilização do Flex e na construção das expressões regulares.
+
+\appendix
+\chapter{Código Flex}
+\lstinputlisting{parser.l} %input de um ficheiro
+\chapter{Código da Lista Ligada}
+\lstinputlisting{listaligada.c}
+\chapter{Código para gerar o HTML}
+\lstinputlisting{html.c}
+\fi
+
+
+
+
+
+
+
+
+
+
+\end{document} 
