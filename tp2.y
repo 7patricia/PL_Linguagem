@@ -25,6 +25,7 @@
 %token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE WRITE READ
 
 
+
 %%
 
 programa	:	BEGINP	{arvore=initBinTree();} declaracoes	MIDDLE	instrucoes	ENDP	
@@ -45,8 +46,8 @@ variaveis	:	variavel
 			|	variaveis ',' variavel	
 			;
 
-variavel 	:	pal 						{varAtual=$1;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);proxReg++;
-											if(aux==-1)printf("Erro: A variável %s já foi declarada!\n",varAtual);}	
+variavel 	:	pal 						{varAtual=$1;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);proxReg=proxReg+tamanho;
+											if(aux==-1)yyerror("A variável já foi declarada!");}	
 			;
 
 instrucoes	:	instrucao ';'		
@@ -63,7 +64,7 @@ instrucao	:	atribuicao
 atribuicao 	:	var '=' expressao 				
 			;
 
-var 		: 	pal 					{aux=existsBinTree(arvore,$1); if(aux==0)printf("Erro: A variável %s não está declarada!\n",$1);}
+var 		: 	pal 					{aux=existsBinTree(arvore,$1); if(aux==0)yyerror("A variável não foi declarada!");}
 			| 	pal '('expressao')'
 			;
 

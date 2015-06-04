@@ -288,7 +288,7 @@ typedef struct {
 } YYSTACKDATA;
 /* variables for the parser stack */
 static YYSTACKDATA yystack;
-#line 98 "tp2.y"
+#line 99 "tp2.y"
 int yyerror(char *s) {
 	fprintf(stderr, "%d! %s\n", yylineno, s);
 	return 0;
@@ -511,29 +511,29 @@ yyreduce:
     switch (yyn)
     {
 case 1:
-#line 30 "tp2.y"
+#line 31 "tp2.y"
 	{arvore=initBinTree();}
 break;
 case 6:
-#line 37 "tp2.y"
+#line 38 "tp2.y"
 	{tamanho=yystack.l_mark[-3].vali;printf("tamanho: %i\n",tamanho);}
 break;
 case 7:
-#line 40 "tp2.y"
-	{tipo=yystack.l_mark[0].vals;printf("tipo: %s\n",tipo);}
-break;
-case 8:
 #line 41 "tp2.y"
 	{tipo=yystack.l_mark[0].vals;printf("tipo: %s\n",tipo);}
 break;
+case 8:
+#line 42 "tp2.y"
+	{tipo=yystack.l_mark[0].vals;printf("tipo: %s\n",tipo);}
+break;
 case 11:
-#line 48 "tp2.y"
-	{varAtual=yystack.l_mark[0].vals;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);proxReg++;
-											if(aux==-1)printf("Erro: A variável %s já foi declarada!\n",varAtual);}
+#line 49 "tp2.y"
+	{varAtual=yystack.l_mark[0].vals;printf("nome: %s\n",varAtual);aux=insertBinTree(arvore, varAtual, tipo, tamanho, proxReg);proxReg=proxReg+tamanho;
+											if(aux==-1)yyerror("A variável já foi declarada!");}
 break;
 case 20:
-#line 66 "tp2.y"
-	{aux=existsBinTree(arvore,yystack.l_mark[0].vals); if(aux==0)printf("Erro: A variável %s não está declarada!\n",yystack.l_mark[0].vals);}
+#line 67 "tp2.y"
+	{aux=existsBinTree(arvore,yystack.l_mark[0].vals); if(aux==0)yyerror("A variável não foi declarada!");}
 break;
 #line 537 "y.tab.c"
     }
