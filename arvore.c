@@ -9,8 +9,7 @@ Tree initBinTree(){
 
 	t->nome=(char*)malloc(sizeof(char*));
 	t->nome=NULL;
-	t->tipo=(char*)malloc(sizeof(char*));
-	t->tipo=NULL;
+	t->tipo=-1;
 	t->tamanho=-1;
 	t->registo=-1;
 	t->esq=NULL;
@@ -43,7 +42,7 @@ int existsBinTree(Tree t, char* n){
 	return 1;
 }
 
-int insertBinTree(Tree t, char* n, char* ty, int tam, int reg){
+int insertBinTree(Tree t, char* n, int ty, int tam, int reg){
 	Tree new;
 
 
@@ -55,7 +54,7 @@ int insertBinTree(Tree t, char* n, char* ty, int tam, int reg){
 	if(!t->nome){
 		t->nome=n;
 		t->tipo=ty;
-		t->tamanho=t;
+		t->tamanho=tam;
 		t->registo=reg;
 		t->esq=NULL;
 		t->dir=NULL;
@@ -65,7 +64,7 @@ int insertBinTree(Tree t, char* n, char* ty, int tam, int reg){
 		new=(Tree)malloc(sizeof(struct node));
 		new->nome=n;
 		new->tipo=ty;
-		new->tamanho=t;
+		new->tamanho=tam;
 		new->registo=reg;
 		new->esq=NULL;
 		new->dir=NULL;
@@ -94,3 +93,54 @@ int insertBinTree(Tree t, char* n, char* ty, int tam, int reg){
 	
 	return 0;	
 }
+
+int registoVar (Tree t, char *nomeVar){
+	Tree aux;
+
+	if(t->nome==NULL)
+		return -1;
+	aux=t;
+	
+	while(aux != NULL && (strcmp(nomeVar,aux->nome)!=0)){
+
+		if((strcmp(nomeVar,aux->nome)>0)) //procura a direita
+			aux=aux->dir;
+
+		else //procura a esquerda
+			aux=aux->esq;
+	}
+	
+	if(aux==NULL)
+	 //se aux==NULL, entao o elemento e nao existe
+		return -1;
+
+	return aux->registo; 
+}
+
+
+int tipoVar(Tree t, char* nomeVar){
+
+	Tree aux;
+
+	if(t->nome==NULL)
+		return -1;
+	aux=t;
+	
+	while(aux != NULL && (strcmp(nomeVar,aux->nome)!=0)){
+
+		if((strcmp(nomeVar,aux->nome)>0)) //procura a direita
+			aux=aux->dir;
+
+		else //procura a esquerda
+			aux=aux->esq;
+	}
+	
+	if(aux==NULL)
+	 //se aux==NULL, entao o elemento e nao existe
+		return -1;
+
+	return aux->tipo;
+
+	return 0;
+}
+

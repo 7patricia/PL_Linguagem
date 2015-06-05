@@ -6,6 +6,7 @@ BODY
 	y=1+2;
 	IF (x>>5) y=y+1; ENDIF;
 	x=2;
+	vect(10)=4;
 	WHILE (y<<2) y=y+1; IF (x>>5) w=y+1; ENDIF; ENDWHILE;
 	IF (x==1) y=y+1; y=2; ELSE y=3; ENDIF;
 

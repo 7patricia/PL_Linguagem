@@ -5,7 +5,7 @@
 
 typedef struct node {
 	char* nome;
-	char* tipo;
+	int tipo;
 	int tamanho;
 	int registo;
 	struct node *esq;
@@ -28,4 +28,7 @@ int existsBinTree(Tree t, char* nome);
  * Insere o elemento e na arvore t.
  * Retorna -1 em caso de erro e 0 caso corra tudo bem.
  */
-int insertBinTree(Tree t, char* nome, char* ty, int tam, int reg);
+int insertBinTree(Tree t, char* nome, int ty, int tam, int reg);
+
+
+int tipoVar(Tree t, char* nome);

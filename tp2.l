@@ -1,10 +1,10 @@
 %{
-	#include "y.tab.h"
-	void yyerror(char *);
+	//#include "y.tab.h"
+	//void yyerror(char *);
 %}
 
 num 		[0-9]+
-pal 		[a-zA-Z]+
+palavra 		[a-zA-Z]+
 espacos 	[ \t]
 opA 		"+"|"-"|"||"     
 opM			"&&"|"*"|"/"
@@ -22,8 +22,10 @@ vetor		"ARRAY"
 read		"READ"
 write		"WRITE"
 
+%option yylineno
+
 %%
-[,;()=]              { return yytext[0]; }
+[,;()={}]              { return yytext[0]; }
 {inicio}			{ return BEGINP; }
 {corpo}				{ return MIDDLE; }
 {fim}				{ return ENDP; }
@@ -40,7 +42,7 @@ write		"WRITE"
 {read}				{ return (READ);}
 {write}				{ return (WRITE);}
 {num}     			{ yylval.vali = atoi(yytext); return num; }
-{pal}     			{ yylval.vals = strdup(yytext); return pal; }
+{palavra}     		{ yylval.vals = strdup(yytext); return pal; }
 
 .|\n      			{ ; }
 

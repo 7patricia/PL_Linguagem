@@ -1,0 +1,10 @@
+BEGIN
+	INT x,y,z;
+	ARRAY(20) vect;
+BODY
+	x=1;
+	y=1+2;
+	x=2;
+	vect(10)=4;
+
+END

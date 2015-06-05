@@ -1,9 +1,12 @@
 BEGIN
 	INT x,y,z;
+	ARRAY(10) vect;
 BODY
 	x=1;
 	y=1+2+2;
 	READ(z); 
 	z=(x+y)*3;
-	WRITE(z);
+	WRITE(x);
+	READ(x);
+	READ(vect(5));
 END
