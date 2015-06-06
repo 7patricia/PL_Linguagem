@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.31)  2 JUN 2015 19:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.31)  3 JUN 2015 16:57
 entering extended mode
 **relatório.tex
 ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.tex"
@@ -190,31 +190,79 @@ Cap\'{\i }tulo 3.
 [5
 
 ]
+(C:\Users\Patrícia\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+) (C:\Users\Patrícia\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+)
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 129.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 129.
+
 Overfull \hbox (9.25064pt too wide) in paragraph at lines 137--142
 \OT1/cmr/m/n/10 Por sua vez os smbolo ter-mi-nais s~ao: num, pal, IF, EN-DIF,
  WHILE, ENDWHILE,
  []
 
-[6] [7] [8] ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.aux
-") ) 
+[6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 146.
+
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 146.
+ [7]
+Overfull \hbox (8.11148pt too wide) in paragraph at lines 208--213
+\OT1/cmr/bx/n/10 arvore.h \OT1/cmr/m/n/10 Fi-cheiro com a es-tru-tura de-fi-nid
+a para guar-dar in-formac~oes das variaveis
+ []
+
+[8] [9]
+Cap\'{\i }tulo 4.
+[10
+
+]
+Cap\'{\i }tulo 5.
+[11
+
+]
+Ap\^endice A.
+("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\tp2.l"
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 6.
+ [12
+
+]) [13]
+("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.aux") ) 
 Here is how much of TeX's memory you used:
- 2996 strings out of 493921
- 41304 string characters out of 3144864
- 101957 words of memory out of 3000000
- 6289 multiletter control sequences out of 15000+200000
- 10236 words of font info for 36 fonts, out of 3000000 for 9000
+ 3591 strings out of 493921
+ 47484 string characters out of 3144864
+ 187449 words of memory out of 3000000
+ 6864 multiletter control sequences out of 15000+200000
+ 11456 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,7n,32p,723b,243s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on relatório.pdf (10 pages, 130053 bytes).
+ 31i,7n,51p,723b,1661s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on relatório.pdf (15 pages, 192218 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
