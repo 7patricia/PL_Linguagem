@@ -1,0 +1,14 @@
+BEGIN
+	INT x;
+	ARRAY(500) vect;
+BODY
+	x=300;
+	WHILE(x>>vect(10)&&(x<<vect(20)))
+	IF(x==2)
+	READ(vect(1));
+	ELSE
+	READ(vect(2));
+	ENDIF;
+	x=x+1;
+	ENDWHILE;
+END

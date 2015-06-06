@@ -1,21 +1,18 @@
 BEGIN
-	INT x,y,z;
+	INT x;
 	ARRAY(20) vect;
 BODY
-	x=1;
-	y=1+2;
-	x=2;
-	vect(10)=4;
-	x=y*vect(5);
-	vect(4)=z;
-	READ(z);
-	WRITE(x);
-	IF(x>>y)
-	WRITE(vect(1));
-	ELSE
-	WRITE(vect(2));
-	ENDIF;
-	WHILE((1<<z)&&(x>>2))
+	x=0;
+	vect(1)=30;
+	WHILE(x<<vect(1))
+	vect(5)=x;
 	x=x+1;
+	IF(x|=|6)
+	x=9;
+	ELSE
+	x=10;
+	ENDIF;
 	ENDWHILE;
+	WRITE(x);
+	READ(vect(6));
 END
