@@ -1,13 +1,18 @@
 \select@language {portuges}
 \contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{2}
-\contentsline {chapter}{\numberline {2}An\'alise e Especifica\c c\~ao}{3}
-\contentsline {section}{\numberline {2.1}Enunciado}{3}
-\contentsline {section}{\numberline {2.2}Descri\c c\~ao do Problema}{3}
-\contentsline {chapter}{\numberline {3}Concep\c c\~ao/desenho da Resolu\c c\~ao}{5}
-\contentsline {section}{\numberline {3.1}Desenho da Linguagem}{5}
-\contentsline {section}{\numberline {3.2}Desenho da Gram\'atica}{7}
-\contentsline {section}{\numberline {3.3}M\'odulos da Aplica\c c\~ao}{8}
-\contentsline {section}{\numberline {3.4}Estruturas de Dados}{8}
-\contentsline {chapter}{\numberline {4}Testes realizados e Resultados}{10}
-\contentsline {chapter}{\numberline {5}Conclus\~ao}{11}
-\contentsline {chapter}{\numberline {A}C\'odigo Flex}{12}
+\contentsline {section}{\numberline {1.1}Estrutura do Relat\'orio}{3}
+\contentsline {chapter}{\numberline {2}An\'alise e Especifica\c c\~ao}{4}
+\contentsline {section}{\numberline {2.1}Enunciado}{4}
+\contentsline {section}{\numberline {2.2}Descri\c c\~ao do Problema}{4}
+\contentsline {chapter}{\numberline {3}Concep\c c\~ao/desenho da Resolu\c c\~ao}{6}
+\contentsline {section}{\numberline {3.1}Desenho da Linguagem}{6}
+\contentsline {section}{\numberline {3.2}Desenho da Gram\'atica}{8}
+\contentsline {section}{\numberline {3.3}Gera\c c\~ao de Pseudo-C\'odigo Assembly}{10}
+\contentsline {section}{\numberline {3.4}M\'odulos da Aplica\c c\~ao}{11}
+\contentsline {section}{\numberline {3.5}Estruturas de Dados}{11}
+\contentsline {chapter}{\numberline {4}Testes realizados e Resultados}{13}
+\contentsline {section}{\numberline {4.1}Exemplo 1}{13}
+\contentsline {chapter}{\numberline {5}Conclus\~ao}{16}
+\contentsline {chapter}{\numberline {A}C\'odigo Flex}{17}
+\contentsline {chapter}{\numberline {B}C\'odigo Yacc}{19}
+\contentsline {chapter}{\numberline {C}C\'odigo da \'Arvore Bin\'aria}{24}

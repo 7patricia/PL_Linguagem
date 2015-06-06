@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.31)  3 JUN 2015 16:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.31)  6 JUN 2015 16:09
 entering extended mode
 **relatório.tex
 ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.tex"
@@ -122,18 +122,18 @@ Package: listings 2014/09/06 1.5e (Carsten Heinz)
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 (C:\Users\Patrícia\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -151,21 +151,21 @@ LaTeX Font Info:    ... okay on input line 64.
 )
 \c@lstlisting=\count104
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 66.
+(Font)              <17.28> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 66.
+(Font)              <12> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 66.
+(Font)              <8> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 66.
+(Font)              <6> on input line 67.
  [1
 
 {C:/Users/Patrícia/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 [1] ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.toc"
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 4.
+(Font)              <7> on input line 3.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 4.
+(Font)              <5> on input line 3.
 )
 \tf@toc=\write3
 
@@ -173,96 +173,173 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Cap\'{\i }tulo 1.
+
+Overfull \hbox (7.2507pt too wide) in paragraph at lines 91--97
+\OT1/cmr/m/n/10 Imediatamente apos, no Captulo 3[], e apre-sen-tada a lin-g
+ua-gem cri-ada, a gramatica
+ []
+
 [2
 
-]
+] [3]
 Cap\'{\i }tulo 2.
 
-Overfull \hbox (1.49924pt too wide) in paragraph at lines 91--97
+Overfull \hbox (1.49924pt too wide) in paragraph at lines 100--106
 \OT1/cmr/m/n/10 Apenas deve ter em con-si-derac~ao que a \OT1/cmr/bx/n/10 LPIS
  \OT1/cmr/m/n/10 tera de per-mi-tir ma-nu-sear variaveis
  []
 
-[3
+[4
 
-] [4]
+] [5]
 Cap\'{\i }tulo 3.
-[5
+<esquema.png, id=31, 359.09157pt x 137.7647pt>
+File: esquema.png Graphic file (type png)
+ <use esquema.png>
+Package pdftex.def Info: esquema.png used on input line 113.
+(pdftex.def)             Requested size: 251.36238pt x 96.43462pt.
+ [6
 
-]
+ <C:/Users/Patrícia/Desktop/LEI 3.2/PL/PL_Linguagem/esquema.png>]
 (C:\Users\Patrícia\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 ) (C:\Users\Patrícia\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
-)
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 129.
+) [7]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 143.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 129.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 143.
 
-Overfull \hbox (9.25064pt too wide) in paragraph at lines 137--142
-\OT1/cmr/m/n/10 Por sua vez os smbolo ter-mi-nais s~ao: num, pal, IF, EN-DIF,
- WHILE, ENDWHILE,
+Overfull \hbox (13.19508pt too wide) in paragraph at lines 151--156
+\OT1/cmr/m/n/10 Por sua vez os smbolos ter-mi-nais s~ao: num, pal, IF, EN-DIF
+, WHILE, ENDWHILE,
  []
 
-[6]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 146.
-
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 146.
- [7]
-Overfull \hbox (8.11148pt too wide) in paragraph at lines 208--213
+[8] [9] [10]
+Overfull \hbox (8.11148pt too wide) in paragraph at lines 236--240
 \OT1/cmr/bx/n/10 arvore.h \OT1/cmr/m/n/10 Fi-cheiro com a es-tru-tura de-fi-nid
 a para guar-dar in-formac~oes das variaveis
  []
 
-[8] [9]
+[11] [12]
 Cap\'{\i }tulo 4.
-[10
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
+
+ []
+
+[13
+
+] [14] [15]
 Cap\'{\i }tulo 5.
-[11
+[16
 
 ]
 Ap\^endice A.
 ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\tp2.l"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 6.
- [12
+ [17
 
-]) [13]
-("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.aux") ) 
+]) [18]
+Ap\^endice B.
+[19
+
+]
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 %token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE WRITE
+ READ INT ARRAY[] 
+ []
+
+[20]
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 atribuicao  : pal '=' expressao  { aux=existsBinTree(arvore,
+$1); if(aux==0)[] 
+ []
+
+
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 { registo=registoVar(arvore,$1); fprintf(file,"STOREG %d\n",
+registo); } }[] 
+ []
+
+
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 |  expressao OPR expressao  { if( strcmp($2,">>")==0 ) { fpr
+intf(file,"SUP\n"); }[] 
+ []
+
+
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 |  expressao OPA termo { if( strcmp($2,"+")==0 ) { fprintf(f
+ile,"ADD\n"); }[] 
+ []
+
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 |  termo OPM fator { if( strcmp($2,"*")==0 ) { fprintf(file,
+"MUL\n"); }[] 
+ []
+
+[21]
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 { registo=registoVar(arvore,$1); fprintf(file,"LOADG %d\n",r
+egisto);}}[] 
+ []
+
+
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 condicao :  IF '('cond')' { fprintf(file,"JZ lab%d\n",cont);
+}  instrucoes   senao[] 
+ []
+
+
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 546--546
+[]\OT1/cmtt/m/n/10 ciclo  : WHILE { fprintf(file,"labinicio%d: NOP\n",cont);}'(
+'cond')'[] 
+ []
+
+[22] [23]
+Ap\^endice C.
+("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\arvore.c" [24
+
+] [25]
+[26]) [27] ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.aux"
+) ) 
 Here is how much of TeX's memory you used:
- 3591 strings out of 493921
- 47484 string characters out of 3144864
- 187449 words of memory out of 3000000
- 6864 multiletter control sequences out of 15000+200000
- 11456 words of font info for 40 fonts, out of 3000000 for 9000
+ 3646 strings out of 493921
+ 48139 string characters out of 3144864
+ 191235 words of memory out of 3000000
+ 6913 multiletter control sequences out of 15000+200000
+ 11507 words of font info for 40 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 31i,7n,51p,723b,1661s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on relatório.pdf (15 pages, 192218 bytes).
+ 31i,7n,51p,1254b,1728s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on relatório.pdf (29 pages, 230316 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
+ 144 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

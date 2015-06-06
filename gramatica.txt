@@ -1,4 +1,4 @@
-programa	:	BEGINP		
+programa	:	BEGINP declaracoes MIDDLE	instrucoes	ENDP	
 
 declaracoes	: declaracao 
 			| declaracoes  declaracao 
@@ -13,52 +13,53 @@ tipo		: INT
 			;
 
 variaveis	:	variavel 					
-			|	variaveis ',' variavel	
+			|	variaveis ',' variavel		
 			;
 
-variavel 	:	pal 					 							
+variavel 	:	pal 						
 			;
 
-instrucoes	:	instrucao ';'		
-			|	instrucoes  instrucao ';'
+instrucoes	:	instrucao ';'				
+			|	instrucoes  instrucao ';'	
 			;
 
-instrucao	:	atribuicao
-			| 	condicao
-			| 	ciclo
-			|	READ '(' var ')' 
-			|	WRITE '('expressao')' 
+instrucao	:	atribuicao					
+			| 	condicao					
+			| 	ciclo						
+			|	READ '(' pal ')' 
+			| 	READ  '(' pal '('expressao')' ')'				
+			|	WRITE '('expressao')' 		
 			;
 
-atribuicao 	:	var '=' expressao 				
-			;
-
-var 		: 	pal 					
-			| 	pal '('expressao')'
+atribuicao 	:	pal '=' expressao 
+			|	pal 							
 			;
 
 
-expressao	: 	termo
-			| 	expressao OPA termo
+cond		:	expressao					
+			| 	expressao OPR expressao 	
 			;
 
-termo		: 	fator
-			| 	termo OPM fator
+expressao	: 	termo						
+			| 	expressao OPA termo										  	
 			;
 
-fator		: 	var 						
-			| 	num
-			|	'(' cond ')'
+termo		: 	fator						
+			| 	termo OPM fator											  	
 			;
 
-condicao	: 	IF '('cond')' instrucoes  ENDIF 
-			| 	IF '('cond')' instrucoes  ELSE instrucoes ENDIF	
+fator		: 	pal												
+			| 	pal '('expressao')'				
+			| 	num							
+			|	'(' cond ')'				
+			;
+
+condicao	: 	IF '('cond')'  instrucoes   senao  	
+			;
+
+senao		:	ENDIF
+			| 	ELSE instrucoes  ENDIF
 			;
 
 ciclo 		:	WHILE '('cond')' instrucoes ENDWHILE
-			;
-
-
-cond		:	expressao
-			| 	expressao OPR expressao
 			;
