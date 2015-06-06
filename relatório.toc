@@ -12,7 +12,10 @@
 \contentsline {section}{\numberline {3.5}Estruturas de Dados}{11}
 \contentsline {chapter}{\numberline {4}Testes realizados e Resultados}{13}
 \contentsline {section}{\numberline {4.1}Exemplo 1}{13}
-\contentsline {chapter}{\numberline {5}Conclus\~ao}{16}
-\contentsline {chapter}{\numberline {A}C\'odigo Flex}{17}
-\contentsline {chapter}{\numberline {B}C\'odigo Yacc}{19}
-\contentsline {chapter}{\numberline {C}C\'odigo da \'Arvore Bin\'aria}{24}
+\contentsline {section}{\numberline {4.2}Exemplo 2}{15}
+\contentsline {section}{\numberline {4.3}Exemplo 3}{16}
+\contentsline {section}{\numberline {4.4}Exemplo 4}{18}
+\contentsline {chapter}{\numberline {5}Conclus\~ao}{21}
+\contentsline {chapter}{\numberline {A}C\'odigo Flex}{22}
+\contentsline {chapter}{\numberline {B}C\'odigo Yacc}{24}
+\contentsline {chapter}{\numberline {C}C\'odigo da \'Arvore Bin\'aria}{28}

@@ -364,6 +364,218 @@ fwhile1: NOP
 STOP
 \end{verbatim}
 
+
+\section{Exemplo 2}
+Ficheiro de Entrada:
+\begin{verbatim}
+BEGIN
+INT x,y,z;
+ARRAY(10) vect;
+BODY
+x=1;
+y=1+2+2;
+READ(z); 
+z=(x+y)*3;
+WRITE(x);
+READ(x);
+READ(vect(5));
+END
+\end{verbatim}
+
+Ficheiro de Saída:
+\begin{verbatim}
+PUSHN 1
+PUSHN 1
+PUSHN 1
+PUSHN 10
+START
+PUSHI 1
+STOREG 0
+PUSHI 1
+PUSHI 2
+ADD
+PUSHI 2
+ADD
+STOREG 1
+READ
+ATOI
+STOREG 2
+LOADG 0
+LOADG 1
+ADD
+PUSHI 3
+MUL
+STOREG 2
+LOADG 0
+WRITEI
+READ
+ATOI
+STOREG 0
+PUSHGP
+PUSHI 3
+PADD
+PUSHI 5
+READ
+ATOI
+STOREN
+STOP
+\end{verbatim}
+
+\section{Exemplo 3}
+Ficheiro de Entrada:
+\begin{verbatim}
+BEGIN
+INT x;
+ARRAY(20) vect;
+BODY
+x=0;
+vect(1)=30;
+WHILE(x<<vect(1))
+vect(5)=x;
+x=x+1;
+IF(x|=|6)
+x=9;
+ELSE
+x=10;
+ENDIF;
+ENDWHILE;
+WRITE(x);
+READ(vect(6));
+END
+\end{verbatim}
+
+Ficheiro de Saída:
+\begin{verbatim}
+PUSHN 1
+PUSHN 20
+START
+PUSHI 0
+STOREG 0
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 1
+PUSHI 30
+STOREN
+labinicio0: NOP
+LOADG 0
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 1
+LOADN
+INF
+JZ fwhile0
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 5
+LOADG 0
+STOREN
+LOADG 0
+PUSHI 1
+ADD
+STOREG 0
+LOADG 0
+PUSHI 6
+EQUAL
+NOT
+JZ lab0
+PUSHI 9
+STOREG 0
+JUMP fse0
+lab0: NOP
+PUSHI 10
+STOREG 0
+fse0: NOP
+JUMP labinicio2
+fwhile1: NOP
+LOADG 0
+WRITEI
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 6
+READ
+ATOI
+STOREN
+STOP
+\end{verbatim}
+
+\section{Exemplo 4}
+
+Ficheiro de Entrada:
+\begin{verbatim}
+BEGIN
+INT x;
+ARRAY(500) vect;
+BODY
+x=300;
+WHILE(x>>vect(10)&&(x<<vect(20)))
+IF(x==2)
+READ(vect(1));
+ELSE
+READ(vect(2));
+ENDIF;
+x=x+1;
+ENDWHILE;
+END
+\end{verbatim}
+
+Ficheiro de Saída:
+\begin{verbatim}
+PUSHN 1
+PUSHN 500
+START
+PUSHI 300
+STOREG 0
+labinicio0: NOP
+LOADG 0
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 10
+LOADN
+LOADG 0
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 20
+LOADN
+INF
+MUL
+SUP
+JZ fwhile0
+LOADG 0
+PUSHI 2
+EQUAL
+JZ lab0
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 1
+READ
+ATOI
+STOREN
+JUMP fse0
+lab0: NOP
+PUSHGP
+PUSHI 1
+PADD
+PUSHI 2
+READ
+ATOI
+STOREN
+fse0: NOP
+LOADG 0
+PUSHI 1
+ADD
+STOREG 0
+JUMP labinicio2
+fwhile1: NOP
+STOP
+\end{verbatim}
+
 \chapter{Conclusão} \label{concl}
 Após descrito todo o processo de desenvolvimento deste trabalho, desde o desenho da linguagem até à geração do código Assembly, passando pela construção da gramática, e apresentados os testes e respetivos resultados resta apresentar uma breve conclusão sobre todo o processo.\\
 Atualmente o projeto encontra-se totalmente funcional: recebendo um ficheiro com um programa escrito na nossa linguagem gera sempre as instruções Assembly corretas.\\
@@ -412,8 +624,6 @@ char * vals;
 %token <vali>num 
 %token <vals>pal OPM OPA OPR
 %token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE WRITE READ INT ARRAY
-
-
 
 %%
 

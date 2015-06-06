@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.31)  6 JUN 2015 16:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.3.31)  6 JUN 2015 21:20
 entering extended mode
 **relatório.tex
 ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.tex"
@@ -234,9 +234,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
 [13
 
-] [14] [15]
+] [14] [15] [16] [17] [18] [19] [20]
 Cap\'{\i }tulo 5.
-[16
+[21
 
 ]
 Ap\^endice A.
@@ -250,72 +250,72 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 6.
- [17
+ [22
 
-]) [18]
+]) [23]
 Ap\^endice B.
-[19
+[24
 
 ]
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 546--546
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 %token BEGINP MIDDLE ENDP IF ENDIF WHILE ENDWHILE ELSE WRITE
  READ INT ARRAY[] 
  []
 
-[20]
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 546--546
+[25]
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 atribuicao  : pal '=' expressao  { aux=existsBinTree(arvore,
 $1); if(aux==0)[] 
  []
 
 
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 546--546
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 { registo=registoVar(arvore,$1); fprintf(file,"STOREG %d\n",
 registo); } }[] 
  []
 
 
-Overfull \hbox (80.24629pt too wide) in paragraph at lines 546--546
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 |  expressao OPR expressao  { if( strcmp($2,">>")==0 ) { fpr
 intf(file,"SUP\n"); }[] 
  []
 
 
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 546--546
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 |  expressao OPA termo { if( strcmp($2,"+")==0 ) { fprintf(f
 ile,"ADD\n"); }[] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 546--546
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 |  termo OPM fator { if( strcmp($2,"*")==0 ) { fprintf(file,
 "MUL\n"); }[] 
  []
 
-[21]
-Overfull \hbox (22.4968pt too wide) in paragraph at lines 546--546
+[26]
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 { registo=registoVar(arvore,$1); fprintf(file,"LOADG %d\n",r
 egisto);}}[] 
  []
 
 
-Overfull \hbox (80.24629pt too wide) in paragraph at lines 546--546
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 condicao :  IF '('cond')' { fprintf(file,"JZ lab%d\n",cont);
 }  instrucoes   senao[] 
  []
 
 
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 546--546
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 756--756
 []\OT1/cmtt/m/n/10 ciclo  : WHILE { fprintf(file,"labinicio%d: NOP\n",cont);}'(
 'cond')'[] 
  []
 
-[22] [23]
+[27]
 Ap\^endice C.
-("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\arvore.c" [24
+("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\arvore.c" [28
 
-] [25]
-[26]) [27] ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.aux"
+] [29]
+[30]) [31] ("C:\Users\Patrícia\Desktop\LEI 3.2\PL\PL_Linguagem\relatório.aux"
 ) ) 
 Here is how much of TeX's memory you used:
  3646 strings out of 493921
@@ -337,9 +337,9 @@ iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on relatório.pdf (29 pages, 230316 bytes).
+Output written on relatório.pdf (33 pages, 233944 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
+ 157 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
